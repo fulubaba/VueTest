@@ -7,6 +7,9 @@ const state = {
   count: 0
 }
 const mutations = {
+  increment (state) {
+    state.count++
+  },
   mutationsAddCount (state, n = 0) {
     return (state.count += n)
   },

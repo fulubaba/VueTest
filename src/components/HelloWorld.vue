@@ -37,8 +37,14 @@ export default {
     }
   },
   computed: {
-    count () {
-      return this.$store.getters.getterCount
+    ...mapGetters([
+      'getterCount'
+    ])
+  },
+  watch: {
+    getterCount: function (li) {
+      // this.init() // and so on
+      console.log(li)
     }
   }
 }
