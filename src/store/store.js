@@ -4,7 +4,8 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  count: 0
+  count: 0,
+  distance: true
 }
 const mutations = {
   increment (state) {
@@ -15,6 +16,9 @@ const mutations = {
   },
   mutationsReduceCount (state, n = 0) {
     return (state.count -= n)
+  },
+  changeDistance (state) {
+    state.distance = !state.distance
   }
 }
 const actions = {

@@ -1,5 +1,6 @@
 <template>
   <div id='parent'>
+    <button @click='changeDistance'>commit changeDistance</button>
     <el-row class='row-bg'>父组件</el-row>
     <el-row class='row-bg'>
       <el-input
@@ -32,6 +33,17 @@ export default {
       msg2: 'hello, child2'
     }
   },
+  computed: {
+    watchTest () {
+      return this.$store.state.distance
+    }
+  },
+  watch: {
+    watchTest: function (a, b) {
+      console.log('$S$ Before: ' + a)
+      console.log('$S$ After:  ' + b)
+    }
+  },
   props: {
     // input: Number
   },
@@ -40,6 +52,11 @@ export default {
     parentSay (msg) {
       // console.log(msg) // hello, parent
       this.input = msg
+    },
+    changeDistance () {
+      this.$store.commit({
+        type: 'changeDistance'
+      })
     }
   },
   // 引入子组件
