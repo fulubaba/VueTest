@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Parent from '@/components/parent'
+import TestCv from '@/components/testCanvas'
 
 Vue.use(Router)
 
@@ -8,8 +8,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'parent',
-      component: Parent
+      name: 'cv',
+      component: TestCv
     }
   ]
 })
